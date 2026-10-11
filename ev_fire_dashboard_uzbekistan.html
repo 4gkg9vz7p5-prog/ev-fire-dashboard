@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Дашборд пожаров электромобилей — Южная Корея</title>
+<style>
+:root{--bg:#f4f7fb;--card:#fff;--ink:#152238;--muted:#607086;--line:#dce4ee;--blue:#2463eb;--teal:#0f9f8f;--orange:#e58b25;--red:#d94c4c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);line-height:1.5}
+.wrap{max-width:1240px;margin:auto;padding:28px 20px 48px}
+header{background:linear-gradient(125deg,#10274b,#245caa);color:white;border-radius:20px;padding:28px 30px;margin-bottom:20px}
+.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:12px;opacity:.8;font-weight:700}
+h1{margin:8px 0 8px;font-size:clamp(26px,4vw,38px);line-height:1.15}header p{margin:0;max-width:900px;color:#e0eaff}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.chip{border:1px solid #ffffff50;background:#ffffff14;border-radius:999px;padding:6px 10px;font-size:12px}
+.grid{display:grid;gap:16px}.kpis{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:16px}.two{grid-template-columns:1.2fr 1fr;margin-bottom:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 5px 20px #10274b08;min-width:0}
+.kpi-label{font-size:13px;color:var(--muted);font-weight:600}.kpi-value{font-size:30px;font-weight:800;letter-spacing:-.03em;margin:6px 0}.kpi-note{font-size:12px;color:var(--muted)}
+h2{font-size:18px;margin:0 0 4px}h3{font-size:14px;margin:0 0 8px}.sub{color:var(--muted);font-size:12px;margin:0 0 14px}
+.chart{width:100%;height:auto;display:block}.comment{background:#f0f6ff;border-left:3px solid var(--blue);padding:11px 13px;border-radius:0 10px 10px 0;font-size:13px;margin-top:12px}.comment strong{display:block;margin-bottom:3px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin:6px 0 12px}.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:right;padding:10px 8px;border-bottom:1px solid var(--line);white-space:nowrap}th:first-child,td:first-child{text-align:left}th{color:var(--muted);font-weight:600;background:#f8fafc}tr:last-child td{border-bottom:0}
+.bar-list{display:grid;gap:13px}.bar-row{display:grid;grid-template-columns:130px 1fr 60px;align-items:center;gap:10px;font-size:13px}.track{height:12px;background:#edf1f7;border-radius:99px;overflow:hidden}.bar{height:100%;border-radius:99px;background:var(--blue)}.bar-row:nth-child(2) .bar{background:#3879f6}.bar-row:nth-child(3) .bar{background:#6092f7}.bar-row:nth-child(4) .bar{background:#81a8f8}.bar-row:nth-child(5) .bar{background:#9abaf9}.bar-row:nth-child(6) .bar{background:var(--teal)}.bar-row:nth-child(7) .bar{background:#aab6c7}
+.callout{border:1px solid #f2d7a8;background:#fff9ed;border-radius:14px;padding:16px;font-size:13px;margin-top:16px}.callout h3{color:#91530b}.foot{font-size:12px;color:var(--muted);margin-top:20px}.sources a{color:var(--blue);text-decoration:none}.sources a:hover{text-decoration:underline}.pill{display:inline-block;padding:3px 8px;border-radius:999px;background:#e7f7f3;color:#087969;font-size:11px;font-weight:700}
+@media(max-width:900px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.two{grid-template-columns:1fr}}
+@media(max-width:560px){.wrap{padding:14px 10px 30px}header{padding:22px 18px}.card{padding:15px}.kpi-value{font-size:25px}.bar-row{grid-template-columns:100px 1fr 40px;gap:7px}table{font-size:11px}th,td{padding:8px 4px}}
+</style>
+</head>
+<body><div class="wrap">
+<header>
+<div class="eyebrow">Аналитический дашборд · версия 1.0</div>
+<h1>Пожары электромобилей</h1>
+<p>Южная Корея · динамика 2020–2024 годов; Узбекистан · парк EV и отдельный предварительный реестр сообщений о пожарах.</p>
+<div class="chips"><span class="chip">Период: 2020–2024</span><span class="chip">Сравнение EV и ДВС</span><span class="chip">Данные по батареям: 148 случаев</span><span class="chip">Узбекистан: отдельный реестр сообщений</span></div>
+</header>
+
+<section class="grid kpis">
+<div class="card"><div class="kpi-label">Пожары EV в 2024 году</div><div class="kpi-value">73</div><div class="kpi-note">+1 случай к 2023 году</div></div>
+<div class="card"><div class="kpi-label">EV в эксплуатации, 2024</div><div class="kpi-value">684 244</div><div class="kpi-note">Примерно в 5,1 раза больше, чем в 2020 году</div></div>
+<div class="card"><div class="kpi-label">Пожаров EV на 10 000 машин</div><div class="kpi-value">1,07</div><div class="kpi-note">Расчёт по размеру парка и числу пожаров</div></div>
+<div class="card"><div class="kpi-label">Частота для ДВС, 2024</div><div class="kpi-value">1,66</div><div class="kpi-note">Пожаров на 10 000 зарегистрированных машин</div></div>
+</section>
+
+<section class="grid two">
+<div class="card">
+<h2>1. Количество пожаров EV по годам</h2><p class="sub">Абсолютное число зарегистрированных пожаров</p>
+<svg id="firesChart" class="chart" viewBox="0 0 600 290" role="img" aria-label="График числа пожаров EV"></svg>
+<div class="comment"><strong>Комментарий</strong>Число пожаров выросло с 11 в 2020 году до 73 в 2024 году. Однако парк электромобилей тоже быстро рос, поэтому абсолютные числа нельзя трактовать как самостоятельный показатель риска.</div>
+</div>
+<div class="card">
+<h2>2. Частота пожаров: EV и ДВС</h2><p class="sub">Пожаров на 10 000 зарегистрированных машин</p>
+<svg id="rateChart" class="chart" viewBox="0 0 600 290" role="img" aria-label="График частоты пожаров"></svg>
+<div class="legend"><span><i class="dot" style="background:#2463eb"></i>Электромобили</span><span><i class="dot" style="background:#e58b25"></i>ДВС</span></div>
+<div class="comment"><strong>Комментарий</strong>В этой статистике за 2024 год расчётная частота для EV ниже, чем для ДВС. Сравнение ориентировочное: оно не корректирует результат на возраст автомобилей, пробег, условия эксплуатации и тяжесть пожаров.</div>
+</div>
+</section>
+
+<section class="grid two">
+<div class="card">
+<h2>3. Возгорания высоковольтных батарей по производителям</h2>
+<p class="sub">148 случаев в исследовательской выборке · 2018–2024 годы</p>
+<div id="manufacturerBars" class="bar-list"></div>
+<div class="comment"><strong>Комментарий</strong>Hyundai составляет 43,9% этой выборки, Kia — 17,6%. Это доли от 148 собранных случаев, а не вероятность пожара для владельца. Без размера парка каждой марки нельзя честно сравнить относительный риск.</div>
+</div>
+<div class="card">
+<h2>4. Годовая таблица</h2><p class="sub">Числа и расчётная частота</p>
+<div style="overflow-x:auto">
+<table><thead><tr><th>Год</th><th>Парк EV</th><th>Пожары EV</th><th>На 10 000 EV</th><th>На 10 000 ДВС</th></tr></thead><tbody id="annualTable"></tbody></table>
+</div>
+<div class="comment"><strong>Как читать</strong>Частота рассчитывается так: пожары за год ÷ количество зарегистрированных машин × 10 000. Это приближение по размеру парка, а не показатель «пожаров на автомобиль-год».</div>
+</div>
+</section>
+
+<div class="callout"><h3>⚠️ Ограничения данных</h3>
+<ul>
+<li>Годовая статистика — Южная Корея; она не представляет весь мир.</li>
+<li>Пожары EV не равны пожарам тяговой батареи: источник возгорания может быть другим.</li>
+<li>Таблица производителей — отдельная выборка 148 случаев, поэтому её нельзя напрямую соединять с годовой статистикой.</li>
+<li>В наборе нет разбивки по конкретным моделям и числа машин каждой модели в эксплуатации. Рейтинг моделей по безопасности на этих данных строить нельзя.</li>
+</ul></div>
+
+
+<section class="card" style="margin-top:16px">
+<h2>5. Узбекистан: рост парка электромобилей</h2>
+<p class="sub">Официальные данные Национального комитета по статистике Узбекистана</p>
+<div class="grid two">
+  <div>
+    <div class="kpi-label">Зарегистрировано на 1 июля 2026 года</div>
+    <div class="kpi-value">122 700</div>
+    <div class="kpi-note">Электромобилей по стране</div>
+    <div class="comment"><strong>Комментарий</strong>Национальная статистика фиксирует быстрый рост парка: с 65,2 тыс. на 1 апреля 2025 года до 122,7 тыс. на 1 июля 2026 года — примерно на 88,2%. Это число зарегистрированных автомобилей, а не число пожаров.</div>
+  </div>
+  <div>
+    <svg id="uzFleetChart" class="chart" viewBox="0 0 600 290" role="img" aria-label="Рост зарегистрированного парка электромобилей в Узбекистане"></svg>
+    <div class="comment"><strong>Комментарий</strong>Сравниваются опубликованные контрольные даты, а не полные календарные годы. Поэтому график показывает динамику парка, но не годовой прирост за одинаковые 12-месячные интервалы.</div>
+  </div>
+</div>
+<div style="overflow-x:auto;margin-top:12px">
+<table><thead><tr><th>Дата</th><th>Зарегистрировано EV</th><th>Изменение к предыдущей точке</th></tr></thead><tbody>
+<tr><td>1 апреля 2025</td><td>65 200</td><td>—</td></tr>
+<tr><td>1 июля 2025</td><td>73 600</td><td>+8 400 (+12,9%)</td></tr>
+<tr><td>1 октября 2025</td><td>86 100</td><td>+12 500 (+17,0%)</td></tr>
+<tr><td>1 апреля 2026</td><td>109 200</td><td>+23 100 (+26,8%)</td></tr>
+<tr><td>1 июля 2026</td><td>122 700</td><td>+13 500 (+12,4%)</td></tr>
+</tbody></table>
+</div>
+<div class="callout"><h3>⚠️ Данные о пожарах EV в Узбекистане</h3>
+В открытых официальных источниках, найденных для этой версии, не обнаружена сопоставимая годовая серия с количеством пожаров электромобилей и подтверждёнными случаями возгорания тяговых батарей. Поэтому показатели «пожаров на 10 000 EV» для Узбекистана не рассчитываются: без числа пожаров это было бы недостоверно. Общая статистика всех пожаров в стране не может заменять статистику пожаров электромобилей.
+</div>
+<h3 style="margin-top:18px">Где зарегистрированы электромобили (на 1 июля 2026)</h3>
+<p class="sub">Распределение по крупнейшим регионам; данные официальной статистики</p>
+<div id="uzRegionBars" class="bar-list"></div>
+<p class="foot">Ташкент — 88 496 электромобилей, около 72,1% всего зарегистрированного парка страны. Ташкентская область — 9 546; Самаркандская область — 4 870; Хорезмская область — 3 784. <a href="https://stat.uz/ru/press-tsentr/novosti-goskomstata/70263-zbekistonda-elektromobillar-soni-122-7-mingtaga-etdi-3" target="_blank" rel="noopener">Источник: Национальный комитет по статистике Узбекистана</a>.</p>
+</section>
+
+
+<section class="card" style="margin-top:16px">
+<h2>6. Узбекистан: сообщения о возгораниях EV</h2>
+<p class="sub">Отдельный предварительный реестр сообщений СМИ и Telegram; не смешивается с официальной годовой статистикой.</p>
+<div class="callout"><h3>Статус проверки</h3>
+Ниже приведены сообщения публичных каналов о происшествиях. Они не заменяют подтверждение пожарной службы или техническую экспертизу. Причина пожара и участие тяговой батареи не считаются установленными без официального заключения.
+</div>
+<div style="overflow-x:auto;margin-top:14px">
+<table><thead><tr><th>Автомобиль</th><th>Место</th><th>Что сообщалось</th><th>Причина / батарея</th><th>Источник</th></tr></thead><tbody>
+<tr><td><strong>Leapmotor</strong><br><span class="pill" style="background:#fff0d8;color:#925b0b">Модель не указана</span></td><td>Узбекистан; в сообщениях указывался Ташкент</td><td>Telegram-каналы сообщали о возгорании электромобиля Leapmotor, в том числе в контексте зарядки. Точная дата и обстоятельства требуют сверки с первичным сообщением.</td><td>Причина не подтверждена независимой экспертизой в доступных публикациях. Самовозгорание батареи не доказано.</td><td><a href="https://t.me/s/realniy_tashkent?before=28056" target="_blank" rel="noopener">Реальный Ташкент</a> · <a href="https://t.me/s/PressaUz?before=32463" target="_blank" rel="noopener">Пресса.uz</a></td></tr>
+<tr><td><strong>Zeekr</strong><br><span class="pill" style="background:#fff0d8;color:#925b0b">Модель не указана</span></td><td>Ташкент, Узбекистан</td><td>Публичные Telegram-публикации сообщали о пожаре Zeekr на зарядной станции. В публикациях со ссылкой на Tok Bor говорилось, что зарядка завершилась до обнаружения пожара; также упоминались предшествовавшие работы с аккумулятором.</td><td>Официальная причина в найденных публикациях не установлена; участие батареи как первичного источника возгорания не доказано.</td><td><a href="https://t.me/s/uzmdk?before=33007" target="_blank" rel="noopener">Uzbek-MDK</a> · <a href="https://t.me/s/Tashkent_Land?after=52372" target="_blank" rel="noopener">Tashkent_Land</a></td></tr>
+</tbody></table></div>
+<div class="comment"><strong>Как учитывать</strong>Эти сообщения не прибавляются к подтверждённому годовому счётчику пожаров и не используются для расчёта частоты на 10 000 машин, пока не установлены дата происшествия и подтверждение служб и/или технической экспертизы.</div>
+<h3 style="margin-top:18px">Источник для дальнейшего сбора</h3>
+<p>Telegram-канал <a href="https://t.me/My_electrocar" target="_blank" rel="noopener">@My_electrocar</a> — отбирать публикации с хэштегом <strong>#возгорание</strong>. Полный архив постов канала в текущем доступе недоступен, поэтому неподтверждённые записи из него не добавлялись.</p>
+</section>
+
+<section class="card sources" style="margin-top:16px">
+<h2>Источники и методика</h2>
+<p class="sub">Проверьте исходные материалы перед цитированием цифр в публикациях.</p>
+<ol>
+<li><a href="https://kind.krx.co.kr/external/2026/06/30/001281/20260630002484/10001.htm" target="_blank" rel="noopener">Статистика Южной Кореи: пожары и размер автомобильного парка</a></li>
+<li><a href="https://www.evfiresafe.com/ev-battery-fire-data" target="_blank" rel="noopener">EV FireSafe — база проверенных случаев пожаров тяговых батарей</a></li>
+<li><a href="https://stat.uz/ru/press-tsentr/novosti-goskomstata/70263-zbekistonda-elektromobillar-soni-122-7-mingtaga-etdi-3" target="_blank" rel="noopener">Национальный комитет по статистике Узбекистана — парк EV на 1 июля 2026 года</a></li>
+<li><a href="https://stat.uz/ru/press-tsentr/novosti-goskomstata/65671-zbekistonda-ancha-elektromobil-r-jkhatga-olingan-3" target="_blank" rel="noopener">Национальный комитет по статистике — парк EV на 1 октября 2025 года</a></li>
+</ol>
+<p class="foot">Примечание: статистика по производителям в этом дашборде отражает отдельное исследование 148 случаев возгорания высоковольтных батарей за 2018–2024 годы. Она не является полной мировой базой и не даёт нормализованной частоты пожаров по брендам.</p>
+</section>
+<div class="foot">Дашборд автономный: графики и таблицы встроены в HTML и не требуют подключения к интернету для отображения.</div>
+</div>
+<script>
+const DATA = {"annual": [{"year": 2020, "ev_fleet": 134962, "ev_fires": 11, "ice_fleet": 24365979, "ice_fires": 3613, "ev_rate": 0.8150442346734637, "ice_rate": 1.4828051850492032}, {"year": 2021, "ev_fleet": 231443, "ev_fires": 24, "ice_fleet": 24911101, "ice_fires": 3517, "ev_rate": 1.0369723862894968, "ice_rate": 1.4118203767870396}, {"year": 2022, "ev_fleet": 389855, "ev_fires": 43, "ice_fleet": 23732076, "ice_fires": 3680, "ev_rate": 1.1029741827089559, "ice_rate": 1.5506439470360704}, {"year": 2023, "ev_fleet": 543900, "ev_fires": 72, "ice_fleet": 23646885, "ice_fires": 3736, "ev_rate": 1.323772752344181, "ice_rate": 1.579912111045493}, {"year": 2024, "ev_fleet": 684244, "ev_fires": 73, "ice_fleet": 23370316, "ice_fires": 3885, "ev_rate": 1.0668708823168345, "ice_rate": 1.6623651986562784}], "manufacturers": [{"name": "Hyundai", "cases": 65, "share": 43.91891891891892}, {"name": "Kia", "cases": 26, "share": 17.56756756756757}, {"name": "GM Korea", "cases": 15, "share": 10.135135135135135}, {"name": "Renault Korea", "cases": 9, "share": 6.081081081081082}, {"name": "Volkswagen Group", "cases": 9, "share": 6.081081081081082}, {"name": "Tesla", "cases": 7, "share": 4.72972972972973}, {"name": "Другие", "cases": 17, "share": 11.486486486486488}], "sources": [{"label": "Статистика пожаров и парк автомобилей Южной Кореи", "url": "https://kind.krx.co.kr/external/2026/06/30/001281/20260630002484/10001.htm"}, {"label": "Исследование 148 случаев возгорания высоковольтных батарей", "url": "https://www.evfiresafe.com/ev-battery-fire-data"}]};
+const NS="http://www.w3.org/2000/svg";
+function el(tag,attrs={},text){const e=document.createElementNS(NS,tag);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,v);if(text!==undefined)e.textContent=text;return e;}
+function drawBarChart(id, values, max, color){
+ const svg=document.getElementById(id), W=600,H=290,L=48,R=20,T=18,B=42, pw=W-L-R,ph=H-T-B;
+ for(let t=0;t<=4;t++){let v=max*t/4,y=T+ph-(v/max)*ph;svg.append(el("line",{x1:L,y1:y,x2:W-R,y2:y,stroke:"#e4eaf2","stroke-width":1}));svg.append(el("text",{x:L-9,y:y+4,"text-anchor":"end","font-size":11,fill:"#718096"},String(Math.round(v))));}
+ const slot=pw/values.length,bw=slot*.46;
+ values.forEach((d,i)=>{let h=d.value/max*ph,x=L+i*slot+(slot-bw)/2,y=T+ph-h;svg.append(el("rect",{x,y,width:bw,height:h,rx:5,fill:color}));svg.append(el("text",{x:x+bw/2,y:y-7,"text-anchor":"middle","font-size":12,"font-weight":700,fill:"#24344d"},String(d.value)));svg.append(el("text",{x:x+bw/2,y:H-16,"text-anchor":"middle","font-size":12,fill:"#607086"},d.year));});
+}
+function drawRateChart(){
+ const svg=document.getElementById("rateChart"), rows=DATA.annual,W=600,H=290,L=48,R=20,T=18,B=42,pw=W-L-R,ph=H-T-B,max=2;
+ for(let t=0;t<=4;t++){let v=max*t/4,y=T+ph-v/max*ph;svg.append(el("line",{x1:L,y1:y,x2:W-R,y2:y,stroke:"#e4eaf2"}));svg.append(el("text",{x:L-9,y:y+4,"text-anchor":"end","font-size":11,fill:"#718096"},v.toFixed(1)));}
+ const series=[{key:"ev_rate",color:"#2463eb"},{key:"ice_rate",color:"#e58b25"}];
+ series.forEach(s=>{let pts=rows.map((d,i)=>({x:L+i*pw/(rows.length-1),y:T+ph-d[s.key]/max*ph,v:d[s.key]}));svg.append(el("polyline",{points:pts.map(p=>p.x+","+p.y).join(" "),fill:"none",stroke:s.color,"stroke-width":3,"stroke-linecap":"round","stroke-linejoin":"round"}));pts.forEach((p,i)=>{svg.append(el("circle",{cx:p.x,cy:p.y,r:4.5,fill:s.color,stroke:"#fff","stroke-width":2}));if(s.key==="ev_rate")svg.append(el("text",{x:p.x,y:p.y-10,"text-anchor":"middle","font-size":10,fill:s.color},p.v.toFixed(2)));});});
+ rows.forEach((d,i)=>svg.append(el("text",{x:L+i*pw/(rows.length-1),y:H-16,"text-anchor":"middle","font-size":12,fill:"#607086"},String(d.year))));
+}
+drawBarChart("firesChart",DATA.annual.map(d=>({year:d.year,value:d.ev_fires})),80,"#2463eb");
+drawRateChart();
+const bars=document.getElementById("manufacturerBars");
+DATA.manufacturers.forEach(d=>{const row=document.createElement("div");row.className="bar-row";row.innerHTML=`<span>${d.name}</span><div class="track"><div class="bar" style="width:${d.cases/65*100}%"></div></div><strong style="text-align:right">${d.cases} <span style="font-size:11px;color:#718096;font-weight:500">${d.share.toFixed(1)}%</span></strong>`;bars.appendChild(row);});
+const tbody=document.getElementById("annualTable");
+DATA.annual.forEach(d=>{const tr=document.createElement("tr");tr.innerHTML=`<td>${d.year}</td><td>${d.ev_fleet.toLocaleString("ru-RU")}</td><td>${d.ev_fires}</td><td>${d.ev_rate.toFixed(2)}</td><td>${d.ice_rate.toFixed(2)}</td>`;tbody.appendChild(tr);});
+
+const uzFleet = [
+ {label:"01.04.2025", value:65200},
+ {label:"01.07.2025", value:73600},
+ {label:"01.10.2025", value:86100},
+ {label:"01.04.2026", value:109200},
+ {label:"01.07.2026", value:122700}
+];
+(function drawUzFleet(){
+ const svg=document.getElementById("uzFleetChart"); if(!svg)return;
+ const W=600,H=290,L=58,R=18,T=18,B=48,pw=W-L-R,ph=H-T-B,max=140000;
+ for(let t=0;t<=4;t++){let v=max*t/4,y=T+ph-v/max*ph;svg.append(el("line",{x1:L,y1:y,x2:W-R,y2:y,stroke:"#e4eaf2"}));svg.append(el("text",{x:L-8,y:y+4,"text-anchor":"end","font-size":11,fill:"#718096"},(v/1000).toFixed(0)+"k"));}
+ const slot=pw/uzFleet.length,bw=slot*.48;
+ uzFleet.forEach((d,i)=>{let h=d.value/max*ph,x=L+i*slot+(slot-bw)/2,y=T+ph-h;svg.append(el("rect",{x,y,width:bw,height:h,rx:5,fill:"#0f9f8f"}));svg.append(el("text",{x:x+bw/2,y:y-7,"text-anchor":"middle","font-size":11,"font-weight":700,fill:"#087969"},(d.value/1000).toFixed(1)+"k"));svg.append(el("text",{x:x+bw/2,y:H-16,"text-anchor":"middle","font-size":10,fill:"#607086"},d.label));});
+})();
+const uzRegions = [
+ {name:"г. Ташкент", value:88496},
+ {name:"Ташкентская обл.", value:9546},
+ {name:"Самаркандская обл.", value:4870},
+ {name:"Хорезмская обл.", value:3784},
+ {name:"Кашкадарьинская обл.", value:3045},
+ {name:"Ферганская обл.", value:2442},
+ {name:"Навоийская обл.", value:2227},
+ {name:"Бухарская обл.", value:1963}
+];
+const uzBars=document.getElementById("uzRegionBars");
+if(uzBars) uzRegions.forEach((d,i)=>{const row=document.createElement("div");row.className="bar-row";row.innerHTML=`<span>${d.name}</span><div class="track"><div class="bar" style="width:${d.value/88496*100}%;background:${i===0?'#0f9f8f':'#63b9ae'}"></div></div><strong style="text-align:right">${d.value.toLocaleString("ru-RU")}</strong>`;uzBars.appendChild(row);});
+
+</script>
+</body></html>
